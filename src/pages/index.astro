@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const specs = [
+  ['stack', 'astro 5 · sin frameworks de cliente'],
+  ['js', '0 kb por defecto'],
+  ['build', 'estático, via github actions'],
+  ['fuente', 'markdown + content collections'],
+];
+---
+
+<BaseLayout title="inicio" description="Portfolio de David Gómez Calles — Software Architect. Arquitectura, backend mission-critical e IA local-first.">
+  <p class="label">// portfolio · esquema general</p>
+  <h1>David Gómez Calles</h1>
+  <p>
+    Software Architect. El ancla es la arquitectura; el backend, la herramienta.
+    Sistemas que no pueden fallar, con control total: código, bare metal y red.
+  </p>
+
+  <dl class="spec panel">
+    {specs.map(([k, v]) => (
+      <>
+        <dt class="label">{k}</dt>
+        <dd>{v}</dd>
+      </>
+    ))}
+  </dl>
+
+  <h2>// secciones</h2>
+  <div class="grid">
+    <a class="panel" href={`${import.meta.env.BASE_URL}/cv/`}>
+      <h3>cv →</h3>
+      <p>Trayectoria: BBVA, INDRA, SECURITAS. Origen en monitorización nuclear.</p>
+    </a>
+    <a class="panel" href={`${import.meta.env.BASE_URL}/servicios/`}>
+      <h3>servicios →</h3>
+      <p>Arquitectura, backend zero-failure e IA on-premise.</p>
+    </a>
+    <a class="panel" href={`${import.meta.env.BASE_URL}/blog/`}>
+      <h3>blog →</h3>
+      <p>Bitácora técnica: decisiones reales con su porqué.</p>
+    </a>
+  </div>
+
+  <h2>// proyectos activos</h2>
+  <div class="grid">
+    <div class="panel">
+      <h3>coreAI</h3>
+      <p>Framework de orquestación LLM local-first sobre MCP. Memoria unificada, sin nube.</p>
+    </div>
+    <div class="panel">
+      <h3>ELIOS</h3>
+      <p>Asistente de taller por voz + cámara. Edge client sobre MCP.</p>
+    </div>
+    <div class="panel">
+      <h3>inference node</h3>
+      <p>Nodo de inferencia on-premise: BOM, despliegue y observabilidad.</p>
+    </div>
+    <div class="panel">
+      <h3>gamedev</h3>
+      <p>Cybermaze (migración a microservicios) y mini-juegos JS.</p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .grid a.panel {
+    color: inherit;
+    display: block;
+    transition: border-color 0.15s ease;
+  }
+
+  .grid a.panel:hover {
+    border-color: var(--accent);
+    text-decoration: none;
+  }
+
+  .grid h3 {
+    margin: 0 0 0.4rem;
+    font-size: 0.95rem;
+    color: var(--accent);
+  }
+
+  .grid p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+</style>
