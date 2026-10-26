@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// ESTRUCTURA definida; TEXTO en voz de David. Pricing: pendiente de decidir
+// (tensión horas vs. valor entregado).
+---
+
+<BaseLayout
+  title="servicios"
+  description="Servicios de David Gómez Calles: arquitectura de sistemas, backend mission-critical e IA local-first on-premise."
+>
+  <p class="label">// catálogo</p>
+  <h1>Servicios</h1>
+
+  <article class="panel">
+    <p class="label">01 · arquitectura</p>
+    <h3>Diseño de sistemas y decisiones</h3>
+    <p>
+      Arquitectura de backends y plataformas: principios, ADRs, migraciones de
+      datos en caliente, deuda técnica con criterio. Del diagrama al despliegue,
+      con el porqué documentado.
+    </p>
+  </article>
+
+  <article class="panel">
+    <p class="label">02 · backend zero-failure</p>
+    <h3>Sistemas que no pueden caerse</h3>
+    <p>
+      Backend mission-critical con herencia de monitorización 24/7: alta
+      disponibilidad, observabilidad (Prometheus/Grafana/Loki) y refactoring de
+      legacy sin parar el servicio.
+    </p>
+  </article>
+
+  <article class="panel">
+    <p class="label">03 · ia local-first</p>
+    <h3>Inferencia y orquestación on-premise</h3>
+    <p>
+      Nodos de inferencia en tu hardware: BOM, despliegue, orquestación (MCP,
+      LiteLLM, Qdrant) y observabilidad. Sin que los datos salgan del edificio.
+    </p>
+  </article>
+
+  <aside class="note" style="margin-top: 2rem;">
+    PLACEHOLDER — textos y precios en voz de David. Pendiente: modelo de
+    facturación (horas vs. valor entregado).
+  </aside>
+</BaseLayout>

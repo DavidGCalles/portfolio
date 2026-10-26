@@ -1,0 +1,82 @@
+---
+const { pathname } = Astro.url;
+
+// Marca como activo el enlace de la sección actual.
+const isActive = (href) => pathname.replace(/\/$/, '') === href.replace(/\/$/, '');
+
+const base = import.meta.env.BASE_URL;
+const links = [
+  { href: `${base}/`, label: 'inicio' },
+  { href: `${base}/cv/`, label: 'cv' },
+  { href: `${base}/servicios/`, label: 'servicios' },
+  { href: `${base}/blog/`, label: 'blog' },
+];
+---
+
+<header>
+  <nav aria-label="principal">
+    <a class="brand" href={`${base}/`}>dgc<span aria-hidden="true">://</span>portfolio</a>
+    <ul>
+      {links.map(({ href, label }) => (
+        <li>
+          <a href={href} aria-current={isActive(href) ? 'page' : undefined}>{label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    border-bottom: 1px solid var(--line);
+    background: rgba(10, 14, 20, 0.92);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  nav {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .brand {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .brand span {
+    color: var(--accent);
+  }
+
+  ul {
+    display: flex;
+    gap: 1.4rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.85rem;
+  }
+
+  ul a {
+    color: var(--text-dim);
+  }
+
+  ul a:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  ul a[aria-current='page'] {
+    color: var(--accent);
+  }
+
+  ul a[aria-current='page']::before {
+    content: '> ';
+  }
+</style>

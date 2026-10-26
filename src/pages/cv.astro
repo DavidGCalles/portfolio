@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// DATOS: reales (CV + SSOT de posicionamiento). VOZ: esta página es un
+// esqueleto — David reescribe las descripciones con su propia voz.
+---
+
+<BaseLayout
+  title="cv"
+  description="CV de David Gómez Calles — Software Architect / Senior Backend Engineer. BBVA, INDRA, SECURITAS. Arquitectura cloud, backend mission-critical, IA local-first."
+>
+  <p class="label">// hoja técnica</p>
+  <h1>CV</h1>
+
+  <dl class="spec panel">
+    <dt class="label">nombre</dt>
+    <dd>David Gómez Calles</dd>
+    <dt class="label">rol</dt>
+    <dd>Software Architect / Senior Backend Engineer</dd>
+    <dt class="label">ubicación</dt>
+    <dd>Madrid · Noves, Toledo</dd>
+    <dt class="label">inglés</dt>
+    <dd>C1</dd>
+  </dl>
+
+  <h2>// experiencia</h2>
+
+  <article class="panel">
+    <p class="label">2021 — actualidad · BBVA</p>
+    <h3>Software Architect / Lead</h3>
+    <p>
+      Liderazgo técnico y arquitectura cloud (GCP). Definición de principios de
+      arquitectura, migración de ecosistemas Shadow IT al cloud corporativo,
+      gestión de deuda técnica crítica y migraciones de modelo de datos en
+      caliente con alta disponibilidad.
+    </p>
+  </article>
+
+  <article class="panel">
+    <p class="label">2019 — 2021 · INDRA</p>
+    <h3>Backend Engineer</h3>
+    <p>Backend y microservicios sobre Docker Swarm.</p>
+  </article>
+
+  <article class="panel">
+    <p class="label">2020 — 2021 · SECURITAS</p>
+    <h3>Backend Engineer</h3>
+    <p>
+      Sistemas CRA en tiempo real. Refactoring de legacy 24/7 sin caída de
+      servicio.
+    </p>
+  </article>
+
+  <article class="panel">
+    <p class="label">anterior · Prosegur / Diamond Seguridad</p>
+    <h3>Operaciones de monitorización</h3>
+    <p>
+      Monitorización de infraestructura nuclear y térmica. Origen del criterio
+      zero-failure: sistemas donde el downtime no es una métrica, es un
+      incidente.
+    </p>
+  </article>
+
+  <h2>// stack</h2>
+  <ul class="chips">
+    <li>Python</li><li>FastAPI</li><li>Flask</li><li>Pydantic</li><li>Rust</li>
+    <li>SQLAlchemy</li><li>asyncpg</li><li>GCP</li><li>Docker</li>
+    <li>Kubernetes</li><li>Proxmox VE</li><li>Qdrant</li><li>LiteLLM</li>
+    <li>MCP</li><li>Prometheus</li><li>Grafana</li><li>Loki</li>
+  </ul>
+
+  <h2>// posicionamiento</h2>
+  <div class="panel">
+    <dl class="spec">
+      <dt class="label">ancla</dt>
+      <dd>Arquitectura. El backend es la herramienta, no el título.</dd>
+      <dt class="label">criterio</dt>
+      <dd>Zero-failure: herencia de monitorización nuclear y térmica.</dd>
+      <dt class="label">diferencial</dt>
+      <dd>Control total: código + bare metal + red.</dd>
+      <dt class="label">apuesta</dt>
+      <dd>Local-first y soberanía de datos como valor premium.</dd>
+    </dl>
+  </div>
+
+  <aside class="note" style="margin-top: 2rem;">
+    PLACEHOLDER — descripciones en voz de David. El CV fuente vive en Google
+    Drive (SSOT). Reescribir antes de publicar.
+  </aside>
+</BaseLayout>
