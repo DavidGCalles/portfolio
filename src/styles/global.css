@@ -161,3 +161,20 @@ h2::before {
   font-size: 0.85rem;
   color: var(--text);
 }
+
+/* Enlaces de proyecto dentro de las cards */
+.links {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  font-size: 0.8rem;
+}
+
+.links li {
+  margin-top: 0.25rem;
+}
+
+.links li::before {
+  content: '> ';
+  color: var(--accent);
+}
