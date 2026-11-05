@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const dateFmt = new Intl.DateTimeFormat('es-ES', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+});
+---
+
+<BaseLayout
+  title="blog"
+  description="Bitácora técnica de David Gómez Calles: decisiones de arquitectura, builds reales y sus porqués."
+>
+  <p class="label">// bitácora · {posts.length} entradas</p>
+  <h1>Blog</h1>
+
+  <ol class="posts">
+    {posts.map((post) => (
+      <li>
+        <a href={`${import.meta.env.BASE_URL}/blog/${post.id}/`}>
+          <article class="panel">
+            <p class="label">{dateFmt.format(post.data.pubDate)}</p>
+            <h2>{post.data.title}</h2>
+            <p>{post.data.description}</p>
+            {post.data.tags.length > 0 && (
+              <ul class="chips">
+                {post.data.tags.map((tag) => (
+                  <li>{tag}</li>
+                ))}
+              </ul>
+            )}
+          </article>
+        </a>
+      </li>
+    ))}
+  </ol>
+</BaseLayout>
+
+<style>
+  ol {
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0;
+  }
+
+  li + li {
+    margin-top: 1rem;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  h2 {
+    margin: 0.2rem 0 0.4rem;
+    font-size: 1.05rem;
+  }
+
+  article > p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+
+  article:hover {
+    border-color: var(--accent);
+  }
+
+  .chips {
+    margin-top: 0.6rem;
+  }
+</style>
