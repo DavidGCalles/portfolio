@@ -1,30 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const specs = [
-  ['stack', 'astro 5 · sin frameworks de cliente'],
-  ['js', '0 kb por defecto'],
-  ['build', 'estático, via github actions'],
-  ['fuente', 'markdown + content collections'],
-];
 ---
 
 <BaseLayout title="inicio" description="Portfolio de David Gómez Calles — Software Architect. Arquitectura, backend mission-critical e IA local-first.">
-  <p class="label">// portfolio · esquema general</p>
+  <p class="label">// portfolio</p>
   <h1>David Gómez Calles</h1>
   <p>
     Software Architect. El ancla es la arquitectura; el backend, la herramienta.
     Sistemas que no pueden fallar, con control total: código, bare metal y red.
   </p>
 
-  <dl class="spec panel">
-    {specs.map(([k, v]) => (
-      <>
-        <dt class="label">{k}</dt>
-        <dd>{v}</dd>
-      </>
-    ))}
-  </dl>
+  <p>
+    Ahora en BBVA (arquitectura cloud sobre GCP). Fuera del banco: coreAI, sustrato
+    local-first de orquestación LLM sobre MCP, y gamedev.
+  </p>
 
   <h2>secciones</h2>
   <div class="grid">
