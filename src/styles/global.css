@@ -69,6 +69,11 @@ h2 {
   margin-top: 2.5rem;
 }
 
+h2::before {
+  content: '// ';
+  color: var(--accent);
+}
+
 /* Etiquetas tipo ficha técnica */
 .label {
   color: var(--text-dim);
