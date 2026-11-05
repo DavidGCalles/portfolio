@@ -20,6 +20,12 @@ const dateFmt = new Intl.DateTimeFormat('es-ES', {
   <p class="label">// bitácora · {posts.length} entradas</p>
   <h1>Blog</h1>
 
+  <aside class="note">
+    Sobre este sitio: Astro 5 estático, 0 KB de JS de cliente, build vía GitHub Actions
+    y despliegue a GitHub Pages. Fuente en markdown + content collections.
+    <a href="https://github.com/DavidGCalles/portfolio">Repo ↗</a>
+  </aside>
+
   <ol class="posts">
     {posts.map((post) => (
       <li>
