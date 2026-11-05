@@ -20,9 +20,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Build Astro
-        uses: withastro/action@v3
+        uses: withastro/action@v6
+        with:
+          # Sin lockfile commiteado: fijamos npm para que el action haga
+          # `npm install` en el runner. Cuando exista package-lock.json,
+          # hará `npm ci` (build reproducible).
+          package-manager: npm
 
   deploy:
     needs: build
@@ -33,4 +38,4 @@ jobs:
     steps:
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
