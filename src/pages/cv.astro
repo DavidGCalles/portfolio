@@ -63,14 +63,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <h2>stack técnico</h2>
   <div class="panel">
     <dl class="spec">
+      <dt class="label">lenguajes</dt>
+      <dd>Python · Rust · TypeScript/JavaScript · SQL · Astro</dd>
       <dt class="label">backend</dt>
-      <dd>Python · FastAPI · Flask · Pydantic · Rust · PostgreSQL · SQLAlchemy/asyncpg · Alembic</dd>
-      <dt class="label">infra & cloud</dt>
-      <dd>GCP · Docker · Kubernetes · Proxmox VE (bare metal propio)</dd>
+      <dd>FastAPI · Flask (+RESTful/SocketIO) · Pydantic · SQLAlchemy 2/asyncpg · Alembic · WebSockets (tokio-tungstenite, SocketIO)</dd>
+      <dt class="label">frontend</dt>
+      <dd>Vue.js · React · Pixi.js/WebGL · Astro</dd>
       <dt class="label">ia local-first</dt>
-      <dd>llama.cpp (LLM on-prem) · Infinity (embeddings) · LiteLLM (proxy) · MCP (orquestación) · Qdrant (vectorial)</dd>
+      <dd>MCP · LiteLLM · Infinity (embeddings) · llama.cpp (LLM) · Qdrant + pgvector · sherpa-onnx (ASR) · Piper (TTS) · OpenCV</dd>
+      <dt class="label">datos</dt>
+      <dd>PostgreSQL (+pgvector) · MySQL · Firestore</dd>
+      <dt class="label">infra & cloud</dt>
+      <dd>GCP (Cloud Run · Cloud Build · Artifact Registry) · Docker Compose · Kubernetes · Proxmox VE · nginx</dd>
       <dt class="label">observabilidad</dt>
       <dd>Prometheus · Grafana · Loki</dd>
+      <dt class="label">ci/cd & tests</dt>
+      <dd>GitHub Actions · Cloud Build · pytest</dd>
     </dl>
   </div>
 
