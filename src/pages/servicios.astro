@@ -19,16 +19,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     El BOM se define por tier y aquí solo publico rangos de specs, nunca modelos ni
     precios. Cada tier se cotiza en el momento, con validez de 7 días.
   </p>
-  <div class="panel">
-    <dl class="spec">
-      <dt class="label">tier 1</dt>
-      <dd>16 GB VRAM · GPU mainstream · 32-64 GB RAM · CPU de 8 núcleos · caja compacta</dd>
-      <dt class="label">tier 2</dt>
-      <dd>32 GB VRAM ECC · GPU profesional · 64 GB RAM · CPU de gama alta · recomendado hoy</dd>
-      <dt class="label">tier 3</dt>
-      <dd>64+ GB VRAM ECC · GPU tope profesional · 128+ GB RAM · plataforma workstation</dd>
-    </dl>
-  </div>
+  <article class="panel">
+    <p class="label">tier 1</p>
+    <ul class="specs">
+      <li>16 GB VRAM</li>
+      <li>GPU mainstream</li>
+      <li>32-64 GB RAM</li>
+      <li>CPU de 8 núcleos</li>
+      <li>caja compacta</li>
+    </ul>
+  </article>
+
+  <article class="panel">
+    <p class="label">tier 2 · recomendado hoy</p>
+    <ul class="specs">
+      <li>32 GB VRAM ECC</li>
+      <li>GPU profesional</li>
+      <li>64 GB RAM</li>
+      <li>CPU de gama alta</li>
+    </ul>
+  </article>
+
+  <article class="panel">
+    <p class="label">tier 3</p>
+    <ul class="specs">
+      <li>64+ GB VRAM ECC</li>
+      <li>GPU tope profesional</li>
+      <li>128+ GB RAM</li>
+      <li>plataforma workstation</li>
+    </ul>
+  </article>
 
   <h2>el software</h2>
   <article class="panel">

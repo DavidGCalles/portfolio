@@ -33,6 +33,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: clip;
 }
 
 main {
@@ -127,7 +128,8 @@ h2::before {
 /* Chips de stack */
 .chips {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap
+;
   gap: 0.4rem;
   list-style: none;
   padding: 0;
@@ -177,4 +179,28 @@ h2::before {
 .links li::before {
   content: '> ';
   color: var(--accent);
+}
+
+/* Specs de tiers en lista vertical */
+.specs {
+  list-style: none;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.specs li {
+  padding: 0.1rem 0;
+}
+
+.specs li::before {
+  content: '· ';
+  color: var(--accent);
+}
+
+@media (max-width: 560px) {
+  h1 {
+    font-size: 1.5rem;
+  }
 }
